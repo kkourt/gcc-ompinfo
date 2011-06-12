@@ -209,7 +209,7 @@ mk_omp_for_label(Agnode_t *node, gimple stmt, const char *omp_name)
 	pp_flush(&pp);
 	fclose(pipefp_wr);
 
-	/* read data from the label, and use them as label */
+	/* read data from the pipe, and use them as a label */
 	char label[1024];
 	ret = fread(label, 1, sizeof(label), pipefp_rd);
 	assert(ret < sizeof(label) - 1);
