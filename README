@@ -1,0 +1,22 @@
+
+This is a simple gcc plugin that draws a graph of the OpenMP constructs of a
+progam using graphviz. The main motivation behind this was to investigate what
+kind of information about OpenMP constructs can somebody get at compile time
+using gcc.
+
+An output example can be found here:
+http://www.cslab.ece.ntua.gr/~kkourt/var/for-test.png
+
+TODO:
+ - Use the callgraph to get more information about the (possible) nesting of
+   constructs. For example, we could draw edges from calls inside OMP
+   constructs to functions that contain OMP constructs. Try to do this at
+   link-time, also.
+ - combine with profiling
+ 
+Requirements:
+ - gcc-4.6 (+plugin development files)
+ - libgraph from graphviz
+
+-- 
+Kornilios Kourtis, kkourt@cslab.ece.ntua.gr
